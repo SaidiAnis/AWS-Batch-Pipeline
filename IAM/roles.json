@@ -1,0 +1,135 @@
+{
+    "Roles": [
+        {
+            "Path": "/service-role/",
+            "RoleName": "Amazon_EventBridge_Scheduler_LAMBDA_9af35796ca",
+            "RoleId": "ROLE_ID_HIDDEN",
+            "Arn": "arn:aws:iam::XXXXXXXXXXXX:role/service-role/Amazon_EventBridge_Scheduler_LAMBDA_9af35796ca",
+            "CreateDate": "2025-02-09T11:14:15+00:00",
+            "AssumeRolePolicyDocument": "[HIDDEN]",
+            "MaxSessionDuration": 3600
+        },
+        {
+            "Path": "/service-role/",
+            "RoleName": "Amazon_EventBridge_Scheduler_LAMBDA_e6a085d403",
+            "RoleId": "ROLE_ID_HIDDEN",
+            "Arn": "arn:aws:iam::XXXXXXXXXXXX:role/service-role/Amazon_EventBridge_Scheduler_LAMBDA_e6a085d403",
+            "CreateDate": "2025-02-09T10:50:29+00:00",
+            "AssumeRolePolicyDocument": "[HIDDEN]",
+            "MaxSessionDuration": 3600
+        },
+        {
+            "Path": "/service-role/",
+            "RoleName": "aws-quicksight-service-role-v0",
+            "RoleId": "ROLE_ID_HIDDEN",
+            "Arn": "arn:aws:iam::XXXXXXXXXXXX:role/service-role/aws-quicksight-service-role-v0",
+            "CreateDate": "2025-02-11T17:03:57+00:00",
+            "AssumeRolePolicyDocument": "[HIDDEN]",
+            "MaxSessionDuration": 3600
+        },
+        {
+            "Path": "/service-role/",
+            "RoleName": "AWSGlueServiceRole-crawl_users",
+            "RoleId": "ROLE_ID_HIDDEN",
+            "Arn": "arn:aws:iam::XXXXXXXXXXXX:role/service-role/AWSGlueServiceRole-crawl_users",
+            "CreateDate": "2025-02-11T14:25:47+00:00",
+            "AssumeRolePolicyDocument": "[HIDDEN]",
+            "MaxSessionDuration": 3600
+        },
+        {
+            "Path": "/aws-service-role/ops.apigateway.amazonaws.com/",
+            "RoleName": "AWSServiceRoleForAPIGateway",
+            "RoleId": "ROLE_ID_HIDDEN",
+            "Arn": "arn:aws:iam::XXXXXXXXXXXX:role/aws-service-role/ops.apigateway.amazonaws.com/AWSServiceRoleForAPIGateway",
+            "CreateDate": "2025-02-12T09:34:17+00:00",
+            "AssumeRolePolicyDocument": "[HIDDEN]",
+            "Description": "The Service Linked Role is used by Amazon API Gateway.",
+            "MaxSessionDuration": 3600
+        },
+        {
+            "Path": "/aws-service-role/globalaccelerator.amazonaws.com/",
+            "RoleName": "AWSServiceRoleForGlobalAccelerator",
+            "RoleId": "ROLE_ID_HIDDEN",
+            "Arn": "arn:aws:iam::XXXXXXXXXXXX:role/aws-service-role/globalaccelerator.amazonaws.com/AWSServiceRoleForGlobalAccelerator",
+            "CreateDate": "2024-10-24T07:40:35+00:00",
+            "AssumeRolePolicyDocument": "[HIDDEN]",
+            "Description": "Allows Global Accelerator to call AWS services on customer's behalf",
+            "MaxSessionDuration": 3600
+        },
+        {
+            "Path": "/aws-service-role/support.amazonaws.com/",
+            "RoleName": "AWSServiceRoleForSupport",
+            "RoleId": "ROLE_ID_HIDDEN",
+            "Arn": "arn:aws:iam::XXXXXXXXXXXX:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+            "CreateDate": "2024-09-02T15:10:09+00:00",
+            "AssumeRolePolicyDocument": "[HIDDEN]",
+            "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+            "MaxSessionDuration": 3600
+        },
+        {
+            "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+            "RoleName": "AWSServiceRoleForTrustedAdvisor",
+            "RoleId": "ROLE_ID_HIDDEN",
+            "Arn": "arn:aws:iam::XXXXXXXXXXXX:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+            "CreateDate": "2024-09-02T15:10:09+00:00",
+            "AssumeRolePolicyDocument": "[HIDDEN]",
+            "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+            "MaxSessionDuration": 3600
+        },
+        {
+            "Path": "/",
+            "RoleName": "firehose_fulll_access",
+            "RoleId": "ROLE_ID_HIDDEN",
+            "Arn": "arn:aws:iam::XXXXXXXXXXXX:role/firehose_fulll_access",
+            "CreateDate": "2025-02-12T09:53:14+00:00",
+            "AssumeRolePolicyDocument": "[HIDDEN]",
+            "Description": "",
+            "MaxSessionDuration": 3600
+        },
+        {
+            "Path": "/service-role/",
+            "RoleName": "KinesisFirehoseServiceRole-random_user_f-us-west-2-1739351271761",
+            "RoleId": "ROLE_ID_HIDDEN",
+            "Arn": "arn:aws:iam::XXXXXXXXXXXX:role/service-role/KinesisFirehoseServiceRole-random_user_f-us-west-2-XXXXXXXXXXXX1",
+            "CreateDate": "2025-02-12T09:14:23+00:00",
+            "AssumeRolePolicyDocument": "[HIDDEN]",
+            "MaxSessionDuration": 3600
+        },
+        {
+            "Path": "/service-role/",
+            "RoleName": "KinesisFirehoseServiceRole-random_user_f-us-west-2-1739351739746",
+            "RoleId": "ROLE_ID_HIDDEN",
+            "Arn": "arn:aws:iam::XXXXXXXXXXXX:role/service-role/KinesisFirehoseServiceRole-random_user_f-us-west-2-XXXXXXXXXXXX6",
+            "CreateDate": "2025-02-12T09:17:08+00:00",
+            "AssumeRolePolicyDocument": "[HIDDEN]",
+            "MaxSessionDuration": 3600
+        },
+        {
+            "Path": "/service-role/",
+            "RoleName": "sendRandomUsersToKinesis-role-nyaxtmp6",
+            "RoleId": "ROLE_ID_HIDDEN",
+            "Arn": "arn:aws:iam::XXXXXXXXXXXX:role/service-role/sendRandomUsersToKinesis-role-nyaxtmp6",
+            "CreateDate": "2025-02-12T10:06:06+00:00",
+            "AssumeRolePolicyDocument": "[HIDDEN]",
+            "MaxSessionDuration": 3600
+        },
+        {
+            "Path": "/service-role/",
+            "RoleName": "StoreJsonPlaceholderUsers-role-e424qkbu",
+            "RoleId": "ROLE_ID_HIDDEN",
+            "Arn": "arn:aws:iam::XXXXXXXXXXXX:role/service-role/StoreJsonPlaceholderUsers-role-e424qkbu",
+            "CreateDate": "2025-02-09T09:42:15+00:00",
+            "AssumeRolePolicyDocument": "[HIDDEN]",
+            "MaxSessionDuration": 3600
+        },
+        {
+            "Path": "/service-role/",
+            "RoleName": "TreatJsonPlaceholderUsers-role-tvmr8ezw",
+            "RoleId": "ROLE_ID_HIDDEN",
+            "Arn": "arn:aws:iam::XXXXXXXXXXXX:role/service-role/TreatJsonPlaceholderUsers-role-tvmr8ezw",
+            "CreateDate": "2025-02-11T12:49:41+00:00",
+            "AssumeRolePolicyDocument": "[HIDDEN]",
+            "MaxSessionDuration": 3600
+        }
+    ]
+}
