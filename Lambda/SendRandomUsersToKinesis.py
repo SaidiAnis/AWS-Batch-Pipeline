@@ -4,13 +4,12 @@ import boto3
 kinesis_client = boto3.client('kinesis')
 
 def lambda_handler(event, context):
-    # API Gateway transmet les données au format JSON
+    # Send data
     data = json.loads(event['body'])  # Récupère les données envoyées par RandomUser API
 
-    # Nom du stream Kinesis
     stream_name = 'GETrandomUserAPI'
 
-    # Envoi des données à Kinesis   
+    # Send data to Kinesis  
     response = kinesis_client.put_record(
         StreamName=stream_name,
         Data=json.dumps(data),
