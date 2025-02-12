@@ -26,6 +26,16 @@ This project is an AWS-based data processing pipeline designed to extract, proce
 - **Athena**: For data analysis.
 - **QuickSight**: For data visualization.
 
+## APIs Used
+
+### Batch API: JSONPlaceholder
+JSONPlaceholder is a fake REST API used to simulate batch data in this project. It provides simple endpoints to fetch test data such as users, posts, and comments. This API is used to extract data via API Gateway and process it in the AWS pipeline.
+
+**Link**: [JSONPlaceholder](https://jsonplaceholder.typicode.com)
+
+### API Under Development
+A second API is will be used for this project for near-real-time processing. Specific details about this API, including its endpoints and usage, will be documented once the development is complete.
+
 ## Project Structure
 
 - **Athena/**: File with the result of a select all command.
