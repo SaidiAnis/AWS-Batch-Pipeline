@@ -1,4 +1,4 @@
-# AWS Data Processing Pipeline
+# AWS Data Processing Pipeline (the project is still ongoing)
 
 This project is an AWS-based data processing pipeline designed to extract, process, and analyze data in batch and near real-time . The pipeline uses several AWS services, including Lambda, Kinesis, Glue, Athena, and QuickSight.
 
