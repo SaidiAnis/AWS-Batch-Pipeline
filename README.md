@@ -42,6 +42,6 @@ A second API is will be used for this project for near-real-time processing. Spe
 - **IAM/**: IAM roles JSON files.
 - **lambda/**: Lambda functions used for the project.
 - **S3/**: samples of data files on the S3.
-- **terraform/**: Folder containing Terraform configuration files for infrastructure as code (optional).
+- **terraform/**: Folder containing Terraform configuration files.
 
 
