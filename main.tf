@@ -1,0 +1,33 @@
+provider "aws" {
+  region = "us-west-2"
+}
+
+module "iam" {
+  source     = "./modules/iam"
+  bucket_name =  module.s3_bucket.bucket_id
+  ARN_User = var.ARN_User
+}
+
+
+module "s3_bucket" {
+  source = "./modules/s3"
+  ARN_User = var.ARN_User
+}
+
+module "lambda" {
+  source = "./modules/lambda"
+  
+  function_name   = "StoreJsonPlaceholderUsers"
+  bucket_name     = module.s3_bucket.bucket_id
+  lambda_role_arn = module.iam.lambda_role_arn
+}
+
+module "eventbridge" {
+  source              = "./modules/eventBridge"
+  rule_name           = "daily-event-rule"
+  description         = "Trigger Lambda every day at 10 AM UTC+1"
+  schedule_expression = "cron(00 09 * * ? *)" 
+  lambda_function_arn = module.lambda.StoreJsonPlaceholderUsers_arn
+  lambda_function_name = module.lambda.StoreJsonPlaceholderUsers_name
+}
+
