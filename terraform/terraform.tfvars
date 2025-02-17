@@ -1,1 +1,0 @@
-ARN_User = "arn:aws:iam::575108959917:user/ddraigg00"
