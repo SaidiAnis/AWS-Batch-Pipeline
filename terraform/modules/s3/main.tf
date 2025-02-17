@@ -37,7 +37,7 @@ resource "aws_s3_bucket_notification" "s3_to_lambda" {
   bucket = aws_s3_bucket.batch.id
 
   lambda_function {
-    lambda_function_arn = var.TreatJsonPlaceholderUsers_arn
+    lambda_function_arn = var.ProcessJsonPlaceholderUsers_arn
     events              = ["s3:ObjectCreated:*"]  
     filter_prefix       = "raw/users/"           
   }
@@ -49,7 +49,7 @@ resource "aws_s3_bucket_notification" "s3_to_lambda" {
 resource "aws_lambda_permission" "allow_s3" {
   statement_id  = "AllowS3Invoke"
   action        = "lambda:InvokeFunction"
-  function_name = var.TreatJsonPlaceholderUsers_name
+  function_name = var.ProcessJsonPlaceholderUsers_name
   principal     = "s3.amazonaws.com"
   source_arn    = aws_s3_bucket.batch.arn
 }

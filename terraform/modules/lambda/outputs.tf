@@ -6,10 +6,10 @@ output "StoreJsonPlaceholderUsers_name" {
   value = aws_lambda_function.StoreJsonPlaceholderUsers.function_name
 }
 
-output "TreatJsonPlaceholderUsers_arn" {
-  value = aws_lambda_function.TreatJsonPlaceholderUsers.arn
+output "ProcessJsonPlaceholderUsers_arn" {
+  value = aws_lambda_function.ProcessJsonPlaceholderUsers.arn
 }
 
-output "TreatJsonPlaceholderUsers_name" {
-  value = aws_lambda_function.TreatJsonPlaceholderUsers.function_name
+output "ProcessJsonPlaceholderUsers_name" {
+  value = aws_lambda_function.ProcessJsonPlaceholderUsers.function_name
 }

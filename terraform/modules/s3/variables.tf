@@ -11,14 +11,14 @@ variable "ARN_User" {
   description = "The ARN of the user to be used for permissions and access control"
 }
 
-# Variable for the ARN of the TreatJsonPlaceholderUsers Lambda function
-variable "TreatJsonPlaceholderUsers_arn" {
+# Variable for the ARN of the ProcessJsonPlaceholderUsers Lambda function
+variable "ProcessJsonPlaceholderUsers_arn" {
   type        = string
-  description = "The ARN of the TreatJsonPlaceholderUsers Lambda function"
+  description = "The ARN of the ProcessJsonPlaceholderUsers Lambda function"
 }
 
-# Variable for the name of the TreatJsonPlaceholderUsers Lambda function
-variable "TreatJsonPlaceholderUsers_name" {
+# Variable for the name of the ProcessJsonPlaceholderUsers Lambda function
+variable "ProcessJsonPlaceholderUsers_name" {
   type        = string
-  description = "The name of the TreatJsonPlaceholderUsers Lambda function"
+  description = "The name of the ProcessJsonPlaceholderUsers Lambda function"
 }

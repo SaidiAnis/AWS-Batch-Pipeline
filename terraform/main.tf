@@ -12,8 +12,8 @@ module "iam" {
 module "s3_bucket" {
   source = "./modules/s3"
   ARN_User = var.ARN_User
-  TreatJsonPlaceholderUsers_name = module.lambda.TreatJsonPlaceholderUsers_name
-  TreatJsonPlaceholderUsers_arn = module.lambda.TreatJsonPlaceholderUsers_arn
+  ProcessJsonPlaceholderUsers_name = module.lambda.ProcessJsonPlaceholderUsers_name
+  ProcessJsonPlaceholderUsers_arn = module.lambda.ProcessJsonPlaceholderUsers_arn
 }
 
 module "lambda" {
