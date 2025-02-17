@@ -1,8 +1,3 @@
-variable "function_name" {
-  description = "Lambda function name"
-  type        = string
-}
-
 variable "bucket_name" {
   description = "S3 bucket where Lambda's ZIP file is stored"
   type        = string

@@ -12,12 +12,12 @@ module "iam" {
 module "s3_bucket" {
   source = "./modules/s3"
   ARN_User = var.ARN_User
+  TreatJsonPlaceholderUsers_name = module.lambda.TreatJsonPlaceholderUsers_name
+  TreatJsonPlaceholderUsers_arn = module.lambda.TreatJsonPlaceholderUsers_arn
 }
 
 module "lambda" {
   source = "./modules/lambda"
-  
-  function_name   = "StoreJsonPlaceholderUsers"
   bucket_name     = module.s3_bucket.bucket_id
   lambda_role_arn = module.iam.lambda_role_arn
 }
@@ -31,3 +31,15 @@ module "eventbridge" {
   lambda_function_name = module.lambda.StoreJsonPlaceholderUsers_name
 }
 
+module "Glue" {
+  source        = "./modules/Glue"
+  database_name = "my_glue_database"
+  bucket_name   = module.s3_bucket.bucket_id
+  glue_role_arn = module.iam.glue_role_arn
+
+}
+
+module "athena" {
+  source        = "./modules/Athena"
+  s3_output_bucket = module.s3_bucket.bucket_id
+}

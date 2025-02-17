@@ -1,3 +1,4 @@
+# CloudWatch Event rule, target, Lambda permission, and IAM role for scheduling Lambda execution
 resource "aws_cloudwatch_event_rule" "daily_rule" {
   name                 = var.rule_name
   description          = var.description
@@ -17,14 +18,13 @@ resource "aws_lambda_permission" "allow_eventbridge" {
   source_arn    = aws_cloudwatch_event_rule.daily_rule.arn
 }
 
-
-# IAM Role for EventBridge to invoke Lambda
+# IAM Role for EventBridge to assume and invoke the Lambda function
 resource "aws_iam_role" "eventbridge_lambda_role" {
   name               = "eventbridge-lambda-role"
   assume_role_policy = data.aws_iam_policy_document.eventbridge_assume_role_policy.json
 }
 
-# IAM policy document for EventBridge to assume the role
+# Policy document that allows EventBridge to assume the role
 data "aws_iam_policy_document" "eventbridge_assume_role_policy" {
   statement {
     actions   = ["sts:AssumeRole"]

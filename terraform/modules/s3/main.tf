@@ -31,3 +31,26 @@ data "aws_iam_policy_document" "s3_PUT_GET_policy" {
     }
   }
 }
+
+#s3 bucket notification to start a lambda function
+resource "aws_s3_bucket_notification" "s3_to_lambda" {
+  bucket = aws_s3_bucket.batch.id
+
+  lambda_function {
+    lambda_function_arn = var.TreatJsonPlaceholderUsers_arn
+    events              = ["s3:ObjectCreated:*"]  
+    filter_prefix       = "raw/users/"           
+  }
+
+  depends_on = [aws_lambda_permission.allow_s3]
+}
+
+#give to s3 permission to invoke lambda
+resource "aws_lambda_permission" "allow_s3" {
+  statement_id  = "AllowS3Invoke"
+  action        = "lambda:InvokeFunction"
+  function_name = var.TreatJsonPlaceholderUsers_name
+  principal     = "s3.amazonaws.com"
+  source_arn    = aws_s3_bucket.batch.arn
+}
+
