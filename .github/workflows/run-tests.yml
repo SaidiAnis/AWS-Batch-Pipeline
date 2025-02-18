@@ -1,0 +1,30 @@
+name: Run Tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'  
+
+      - name: Install dependencies
+        run: |
+          pip install boto3
+          pip install requests
+          pip install unittest pytest mock
+
+      - name: Run first test file
+        run: python -m unittest test_ProcessJsonPlaceholderUsers.py
+
+      - name: Run second test file
+        run: python -m unittest test_StoreJsonPlaceholderUsers.py
