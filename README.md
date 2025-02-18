@@ -1,4 +1,3 @@
-
 # AWS Data Processing Pipeline
 
 This project is an AWS-based data processing pipeline designed to extract, process, and analyze data in batch. The pipeline uses several AWS services, including Lambda, Glue, Athena, and QuickSight.
@@ -32,7 +31,15 @@ JSONPlaceholder is a fake REST API used to simulate batch data in this project. 
 ## Project Structure
 
 - **terraform/**: Folder containing Terraform configuration files.
-- **terraform/modules**: the modules used to create the AWS infrastructure, each module represents an AWS service.
+- **terraform/modules**: The modules used to create the AWS infrastructure, each module represents an AWS service.
+
+## Lambda Deployment Notes
+
+The Terraform configuration for Lambda functions includes additional steps to install dependencies, copy files, create ZIP archives, and upload them to an S3 bucket before deployment. These steps are automated using `null_resource` and `archive_file` resources.
+
+### Important Notes:
+- **The provided Terraform commands must be executed in PowerShell**.
+- If you are not using Windows, modify the `copy_command` variable in `terraform/modules/lambda/variables.tf` to suit your operating system.
 
 ## Instructions to Deploy the Pipeline
 
@@ -92,4 +99,3 @@ Enjoy this AWS-based data processing pipeline!
 ## License
 
 This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
-
