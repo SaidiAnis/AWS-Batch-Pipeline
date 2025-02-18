@@ -1,3 +1,4 @@
+
 # AWS Data Processing Pipeline
 
 This project is an AWS-based data processing pipeline designed to extract, process, and analyze data in batch. The pipeline uses several AWS services, including Lambda, Glue, Athena, and QuickSight.
@@ -30,6 +31,7 @@ JSONPlaceholder is a fake REST API used to simulate batch data in this project. 
 
 ## Project Structure
 
+-**.github/workflows**: the workflow script that runs the test functions on every push or pull.
 - **terraform/**: Folder containing Terraform configuration files.
 - **terraform/modules**: The modules used to create the AWS infrastructure, each module represents an AWS service.
 
@@ -94,7 +96,33 @@ To remove the resources, you can use the following Terraform command:
 terraform destroy
 ```
 
-Enjoy this AWS-based data processing pipeline!
+## Testing the Lambdas
+
+Each Lambda function has its own test file. You can run them manually as follows:
+
+### 1. Navigate to the Lambda folder
+```bash
+cd Lambda
+```
+
+### 2. Install dependencies
+Run the following command to install required Python packages:
+```bash
+          pip install boto3
+          pip install requests
+          pip install pytest mock
+```
+
+### 3. Run the test
+Run the test using unittest:
+```bash
+          cd ./Lambda/StoreJsonPlaceholderUsers
+          export PYTHONPATH="." 
+          python -m unittest discover
+```
+
+
+Repeat the same steps for the other Lambda function `ProcessJsonPlaceholderUsers`.
 
 ## License
 
