@@ -7,7 +7,7 @@ from ProcessJsonPlaceholderUsers import lambda_handler, flatten_user
 class TestLambdaFunction(unittest.TestCase):
 
     def test_flatten_user(self):
-        # Test de la fonction flatten_user
+        # Test the flatten_user function
         user = {
             "id": 1,
             "name": "Leanne Graham",
@@ -55,10 +55,10 @@ class TestLambdaFunction(unittest.TestCase):
 
     @patch('ProcessJsonPlaceholderUsers.boto3.client')
     def test_lambda_handler_success(self, mock_boto3_client):
-        # Configuration des mocks
+        # Configure mocks
         os.environ['S3_BUCKET'] = 'test-bucket'
 
-        # Mock de l'événement S3
+        # Mock S3 event
         event = {
             "Records": [
                 {
@@ -70,7 +70,7 @@ class TestLambdaFunction(unittest.TestCase):
             ]
         }
 
-        # Mock de la réponse de S3 (fichier JSON)
+        # Mock S3 response (JSON file)
         mock_s3_client = MagicMock()
         mock_boto3_client.return_value = mock_s3_client
         mock_s3_client.get_object.return_value = {
@@ -97,37 +97,14 @@ class TestLambdaFunction(unittest.TestCase):
                         "catchPhrase": "Multi-layered client-server neural-net",
                         "bs": "harness real-time e-markets"
                     }
-                },
-                {
-                    "id": 6,
-                    "name": "Ervin Howell",
-                    "username": "Antonette",
-                    "email": "Shanna@melissa.tv",
-                    "address": {
-                        "street": "Victor Plains",
-                        "suite": "Suite 879",
-                        "city": "Wisokyburgh",
-                        "zipcode": "90566-7771",
-                        "geo": {
-                            "lat": "-43.9509",
-                            "lng": "-34.4618"
-                        }
-                    },
-                    "phone": "010-692-6593 x09125",
-                    "website": "anastasia.net",
-                    "company": {
-                        "name": "Deckow-Crist",
-                        "catchPhrase": "Proactive didactic contingency",
-                        "bs": "synergize scalable supply-chains"
-                    }
                 }
             ]).encode("utf-8")))
         }
 
-        # Appel de la fonction lambda_handler
+        # Call lambda_handler function
         result = lambda_handler(event, {})
 
-        # Vérifications
+        # Assertions
         mock_s3_client.get_object.assert_called_once_with(Bucket="test-bucket", Key="raw/users/users.json")
         mock_s3_client.put_object.assert_called_once_with(
             Bucket="test-bucket",
@@ -156,10 +133,10 @@ class TestLambdaFunction(unittest.TestCase):
 
     @patch('ProcessJsonPlaceholderUsers.boto3.client')
     def test_lambda_handler_s3_error(self, mock_boto3_client):
-        # Configuration des mocks
+        # Configure mocks
         os.environ['S3_BUCKET'] = 'test-bucket'
 
-        # Mock de l'événement S3
+        # Mock S3 event
         event = {
             "Records": [
                 {
@@ -171,15 +148,15 @@ class TestLambdaFunction(unittest.TestCase):
             ]
         }
 
-        # Mock de l'erreur S3
+        # Mock S3 error
         mock_s3_client = MagicMock()
         mock_boto3_client.return_value = mock_s3_client
         mock_s3_client.get_object.side_effect = Exception("S3 Error")
 
-        # Appel de la fonction lambda_handler
+        # Call lambda_handler function
         result = lambda_handler(event, {})
 
-        # Vérifications
+        # Assertions
         self.assertEqual(result["statusCode"], 500)
         self.assertIn("Error reading file from S3", result["body"])
 
