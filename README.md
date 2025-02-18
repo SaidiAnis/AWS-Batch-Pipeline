@@ -31,7 +31,7 @@ JSONPlaceholder is a fake REST API used to simulate batch data in this project. 
 
 ## Project Structure
 
-- **.github/workflows**: the workflow script that runs the test functions on every push or pull.
+- **.github/workflows**: The workflow script that runs the test functions on every push or pull.
 - **terraform/**: Folder containing Terraform configuration files.
 - **terraform/modules**: The modules used to create the AWS infrastructure, each module represents an AWS service.
 
