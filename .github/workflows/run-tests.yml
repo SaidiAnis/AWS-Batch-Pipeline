@@ -24,7 +24,7 @@ jobs:
           pip install pytest mock
 
       - name: Run first test file
-        run: python -m unittest test_ProcessJsonPlaceholderUsers.py
+        run: python -m unittest .\Lambda\ProcessJsonPlaceholderUsers\test_ProcessJsonPlaceholderUsers.py
 
       - name: Run second test file
-        run: python -m unittest test_StoreJsonPlaceholderUsers.py
+        run: python -m unittest .\Lambda\StoreJsonPlaceholderUsers\test_StoreJsonPlaceholderUsers.py
