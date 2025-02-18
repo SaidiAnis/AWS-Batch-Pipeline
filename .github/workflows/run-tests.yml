@@ -21,7 +21,7 @@ jobs:
         run: |
           pip install boto3
           pip install requests
-          pip install unittest pytest mock
+          pip install pytest mock
 
       - name: Run first test file
         run: python -m unittest test_ProcessJsonPlaceholderUsers.py
