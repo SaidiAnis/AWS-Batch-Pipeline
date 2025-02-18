@@ -66,7 +66,7 @@ def lambda_handler(event, context):
         new_file_key = f"{processed_prefix}processed_{original_filename}"  # Add 'processed_' prefix
         
         # Convert data to JSON Lines format (one object per line)
-        json_lines = "\n".join([json.dumps(user) for user in processed_data])
+        json_lines = "\n".join([json.dumps(user) for user in processed_data]) + "\n"
         
         # Save the processed data to S3
         try:

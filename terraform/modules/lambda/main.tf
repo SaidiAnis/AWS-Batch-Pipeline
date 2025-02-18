@@ -22,7 +22,7 @@ resource "null_resource" "install_dependencies_ProcessJsonPlaceholderUsers" {
 # Step 2: Copy Python file into the directory before zipping (for ProcessJsonPlaceholderUsers)
 resource "null_resource" "copy_python_file_StoreJsonPlaceholderUsers" {
   provisioner "local-exec" {
-    command = "copy ..\\Lambda\\StoreJsonPlaceholderUsers\\StoreJsonPlaceholderUsers.py .\\modules\\lambda\\StoreJsonPlaceholderUsers\\"
+    command = var.copy_command_StoreJsonPlaceholderUsers
   }
 
   depends_on = [null_resource.install_dependencies_StoreJsonPlaceholderUsers]  # Ensure dependencies are installed first
@@ -33,7 +33,7 @@ resource "null_resource" "copy_python_file_StoreJsonPlaceholderUsers" {
 }
 resource "null_resource" "copy_python_file_ProcessJsonPlaceholderUsers" {
   provisioner "local-exec" {
-    command = "copy ..\\Lambda\\ProcessJsonPlaceholderUsers\\ProcessJsonPlaceholderUsers.py .\\modules\\lambda\\ProcessJsonPlaceholderUsers\\"
+    command = var.copy_command_ProcessJsonPlaceholderUsers
   }
 
   depends_on = [null_resource.install_dependencies_ProcessJsonPlaceholderUsers]  # Ensure dependencies are installed first
