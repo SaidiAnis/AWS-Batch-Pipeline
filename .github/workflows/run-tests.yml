@@ -23,14 +23,14 @@ jobs:
           pip install requests
           pip install pytest mock
 
-      - name: Change directory 1 and run tests for StoreJsonPlaceholderUsers
+      - name: Run tests for StoreJsonPlaceholderUsers
         run: |
           cd ./Lambda/StoreJsonPlaceholderUsers
           export PYTHONPATH="." 
           python -m unittest discover
 
-      - name: Change directory 2 and run tests for ProcessJsonPlaceholderUsers
+      - name: Run tests for ProcessJsonPlaceholderUsers
         run: |
-          cd ../ProcessJsonPlaceholderUsers/
+          cd ./Lambda/ProcessJsonPlaceholderUsers
           export PYTHONPATH="."
           python -m unittest discover
