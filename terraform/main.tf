@@ -31,8 +31,8 @@ module "eventbridge" {
   lambda_function_name = module.lambda.StoreJsonPlaceholderUsers_name
 }
 
-module "Glue" {
-  source        = "./modules/Glue"
+module "glue" {
+  source        = "./modules/glue"
   database_name = "my_glue_database"
   bucket_name   = module.s3_bucket.bucket_id
   glue_role_arn = module.iam.glue_role_arn
@@ -40,6 +40,6 @@ module "Glue" {
 }
 
 module "athena" {
-  source        = "./modules/Athena"
+  source        = "./modules/athena"
   s3_output_bucket = module.s3_bucket.bucket_id
 }
