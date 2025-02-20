@@ -1,4 +1,3 @@
-
 # AWS Data Processing Pipeline
 
 This project is an AWS-based data processing pipeline designed to extract, process, and analyze data in batch. The pipeline uses several AWS services, including Lambda, Glue, Athena, and QuickSight.
@@ -43,54 +42,66 @@ The Terraform configuration for Lambda functions includes additional steps to in
 - **The provided Terraform commands must be executed in PowerShell**.
 - If you are not using Windows, modify the `copy_command` variable in `terraform/modules/lambda/variables.tf` to suit your operating system.
 
-## Instructions to Deploy the Pipeline
-
-Follow these steps to deploy the data pipeline using Terraform:
+## Installation Requirements
 
 ### 1. Install Terraform
 Ensure that Terraform is installed on your local machine. Follow the official documentation for installation:
 [Terraform Installation Guide](https://learn.hashicorp.com/tutorials/terraform/install-cli)
 
-### 2. Clone the Repository
+### 2. Install Python
+Ensure Python is installed on your local machine. If not, download and install it from the official Python website:
+[Python Download](https://www.python.org/downloads/)
+
+Verify the installation by running:
+```bash
+python --version
+```
+
+If using multiple versions, ensure you are using Python 3:
+```bash
+python3 --version
+```
+
+### 3. Clone the Repository
 Clone this repository to your local machine:
 ```bash
 git clone <repository_url>
 cd <repository_folder>
 ```
 
-### 3. Configure AWS CLI
+### 4. Configure AWS CLI
 Ensure your AWS CLI is configured with the appropriate access credentials.
 If you haven't configured it yet, you can do so by running:
 ```bash
 aws configure
 ```
 
-### 4. Initialize Terraform
+### 5. Initialize Terraform
 Navigate to the Terraform folder and initialize the working directory.
 ```bash
 cd terraform
 terraform init
 ```
 
-### 5. Create a Terraform Plan
+### 6. Create a Terraform Plan
 Run the following command to create an execution plan:
 ```bash
 terraform plan
 ```
 
-### 6. Apply the Plan
+### 7. Apply the Plan
 Apply the Terraform plan to create the resources on AWS.
 ```bash
 terraform apply
 ```
 
-### 7. Monitor the Process
+### 8. Monitor the Process
 Once the pipeline is deployed, monitor the logs and data flow. Use the AWS Console for insights into the following:
 - Lambda function logs
 - Glue crawler job status
 - Athena query results
 
-### 8. Cleanup
+### 9. Cleanup
 To remove the resources, you can use the following Terraform command:
 ```bash
 terraform destroy
@@ -108,22 +119,22 @@ cd Lambda
 ### 2. Install dependencies
 Run the following command to install required Python packages:
 ```bash
-          pip install boto3
-          pip install requests
-          pip install pytest mock
+pip install boto3
+pip install requests
+pip install pytest mock
 ```
 
 ### 3. Run the test
 Run the test using unittest:
 ```bash
-          cd ./Lambda/StoreJsonPlaceholderUsers
-          export PYTHONPATH="." 
-          python -m unittest discover
+cd ./Lambda/StoreJsonPlaceholderUsers
+export PYTHONPATH="."
+python -m unittest discover
 ```
-
 
 Repeat the same steps for the other Lambda function `ProcessJsonPlaceholderUsers`.
 
 ## License
 
 This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+
