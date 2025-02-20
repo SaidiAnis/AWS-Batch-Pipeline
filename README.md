@@ -83,25 +83,31 @@ cd terraform
 terraform init
 ```
 
-### 6. Create a Terraform Plan
+### 6. Create a Terraform Variables File
+Create a `terraform.tfvars` file and define the variable `ARN_User` with the ARN of your AWS user:
+```hcl
+ARN_User = "arn:aws:iam::123456789012:user/your-user-name"
+```
+
+### 7. Create a Terraform Plan
 Run the following command to create an execution plan:
 ```bash
 terraform plan
 ```
 
-### 7. Apply the Plan
+### 8. Apply the Plan
 Apply the Terraform plan to create the resources on AWS.
 ```bash
 terraform apply
 ```
 
-### 8. Monitor the Process
+### 9. Monitor the Process
 Once the pipeline is deployed, monitor the logs and data flow. Use the AWS Console for insights into the following:
 - Lambda function logs
 - Glue crawler job status
 - Athena query results
 
-### 9. Cleanup
+### 10. Cleanup
 To remove the resources, you can use the following Terraform command:
 ```bash
 terraform destroy
@@ -128,7 +134,7 @@ pip install pytest mock
 Run the test using unittest:
 ```bash
 cd ./Lambda/StoreJsonPlaceholderUsers
-export PYTHONPATH="."
+export PYTHONPATH="." 
 python -m unittest discover
 ```
 
