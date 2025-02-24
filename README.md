@@ -6,7 +6,7 @@ This project is an AWS-based data processing pipeline designed to extract, proce
 ![AWS pipeline diagram](Image/aws_pipeline.png)
 
 1. **EventBridge**: Triggers the process daily at 10 AM UTC+1 (cron schedule).
-2. **Lambda (Extract Data)**: Extracts data from an external source via API Gateway.
+2. **Lambda (Extract Data)**: Extracts data from an external source.
 3. **S3**: Stores raw and processed data.
 4. **Lambda (Process Data)**: Processes the raw data and stores it.
 5. **Glue Crawler**: Analyzes the processed data and updates the data catalog.
