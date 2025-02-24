@@ -1,6 +1,6 @@
 # AWS Data Processing Pipeline
 
-This project is an AWS-based data processing pipeline designed to extract, process, and analyze data in batch. The pipeline uses several AWS services, including Lambda, Glue, Athena, and QuickSight.
+This project is an AWS-based data processing pipeline designed to extract, process, and analyze data in batch. The pipeline uses several AWS services, including Lambda, Glue and Athena.
 
 ## Pipeline Architecture
 ![AWS pipeline diagram](Image/aws_pipeline.png)
