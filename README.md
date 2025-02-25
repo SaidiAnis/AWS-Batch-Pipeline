@@ -16,7 +16,6 @@ This project is an AWS-based data processing pipeline designed to extract, proce
 
 - **EventBridge**: For task scheduling.
 - **Lambda**: For data extraction and processing.
-- **API Gateway**: For interaction with the external API.
 - **S3**: For storing raw and processed data.
 - **Glue**: For data discovery and cataloging.
 - **Athena**: For data analysis.
@@ -24,7 +23,7 @@ This project is an AWS-based data processing pipeline designed to extract, proce
 ## APIs Used
 
 ### Batch API: JSONPlaceholder
-JSONPlaceholder is a fake REST API used to simulate batch data in this project. It provides simple endpoints to fetch test data such as users, posts, and comments. This API is used to extract data via API Gateway and process it in the AWS pipeline.
+JSONPlaceholder is a fake REST API used to simulate batch data in this project. It provides simple endpoints to fetch test data such as users, posts, and comments. This API is used to extract data via a lambda function and process it in the AWS pipeline.
 
 **Link**: [JSONPlaceholder](https://jsonplaceholder.typicode.com)
 
